@@ -11,7 +11,92 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <div id="root">
+      <header>
+        <h1>Kanban Board</h1>
+      </header>
+      <main>
+        <div class="stage planned">
+
+          <div class="stageHeader plannedHeader">
+            <button class="addTaskButton">+</button>
+            <h3 class="stageName">Planned</h3>
+            <span class="stageTasksCount">4</span>
+          </div>
+
+          <div class="stageTasks plannedTasks">
+            <div id="plannedTask0" class="stageTask plannedTask">
+              <p class="stageTaskName plannedTaskName0">Email team for updates</p>
+              <button class="removeTaskButton">x</button>
+            </div>
+
+            <div id="plannedTask1" class="stageTask plannedTask">
+              <p class="stageTaskName plannedTaskName1">Send out meeting request</p>
+              <button class="removeTaskButton">x</button>
+            </div>
+
+            <div id="plannedTask2" class="stageTask plannedTask">
+              <p class="stageTaskName plannedTaskName2">Prepare presentation for the team</p>
+              <button class="removeTaskButton">x</button>
+            </div>
+
+            <div id="plannedTask3" class="stageTask plannedTask">
+              <p class="stageTaskName plannedTaskName3">Book conference room</p>
+              <button class="removeTaskButton">x</button>
+            </div>
+          </div>
+
+        </div>
+
+        
+
+        <div class="stage inProgress">
+
+          <div class="stageHeader inProgressHeader">
+            <button class="addTaskButton">+</button>
+            <h3 class="stageName">In progress</h3>
+            <span class="stageTasksCount">2</span>
+          </div>
+
+          <div class="stageTasks inProgressTasks">
+            <div id="inProgressTask0" class="stageTask inProgressTask">
+              <p class="stageTaskName inProgressTaskName0">Debug the project</p>
+              <button class="removeTaskButton">x</button>
+            </div>
+
+            <div id="inProgressTask0" class="stageTask inProgressTask">
+              <p class="stageTaskName inProgressTaskName0">Add new features to the project</p>
+              <button class="removeTaskButton">x</button>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        
+        <div class="stage done">
+
+          <div class="stageHeader doneHeader">
+            <button class="addTaskButton">+</button>
+            <h3 class="stageName">Done</h3>
+            <span class="stageTasksCount">1</span>
+          </div>
+
+          <div class="stageTasks doneTasks">
+            <div id="doneTask0" class="stageTask doneTask">
+              <p class="stageTaskName doneTaskName0">Book a conference room</p>
+              <button class="removeTaskButton">x</button>
+            </div>
+          </div>
+
+        </div>
+
+      </main>
+      <footer>
+        <p>©2024 @va13k All rights reserved</p>
+      </footer>
+    </div>
+    <!-- <script type="module" src="/src/main.jsx"></script> -->
   </body>
 </html>

@@ -1,14 +1,118 @@
+/* MAIN COLORS: 
+    Black olive   : #41463d;
+    Platinum      : #D7D9D7;
+    Magenta haze  : #914D76;
+    Federal blue  : #0A014F;
+    Pigment green : #47A025;
+*/
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    height: 100vh;
+body, #root {
+    min-height: 100vh;
 
-    color: #000;
+    display: flex;
+    flex-direction: column;
+
+    color: #fff;
     font-family: Poppins;
-
     background-color: #D7D9D7;
+}
+
+header, footer {
+    flex-shrink: 0;
+    text-align: center;
+    background-color: #41463D;
+}
+
+footer {
+    margin-top: auto;
+}
+
+main {
+    flex-grow: 1;
+    margin: 5%;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items:start;
+    gap: 5%;
+}
+
+button {
+    border: 0;
+    cursor: pointer;
+}
+
+.stageHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+    border-radius: 15px;
+    background-color: #41463D;
+}
+
+.addTaskButton, .removeTaskButton {
+    width: 6%;
+    
+    border-radius: 50%;
+    color: #fff;
+    text-align: center;
+    font-size: large;
+    font-weight: 600;
+    background-color: transparent;
+}
+
+.addTaskButton:hover, .removeTaskButton:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+}
+
+.stageTasksCount {
+    align-content: center;
+    width: 10%;
+}
+
+.stageTasks {
+    width: 100%;
+    
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5%;
+}
+
+.stageTask {
+    min-height: 100%;
+
+    margin: 5% 0;
+    padding: 0 5%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    border-radius: 15px;
+}
+
+.plannedTask {
+    background-color: #914D76;
+}
+
+.inProgressTask {
+    background-color: #0A014F;
+}
+
+.doneTask {
+    background-color: #47A025;
+}
+
+.stageTaskName {
+    width: 80%;
 }
