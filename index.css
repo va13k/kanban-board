@@ -21,6 +21,8 @@ body, #root {
     color: #fff;
     font-family: Poppins;
     background-color: #D7D9D7;
+
+    user-select: none;
 }
 
 header, footer {
@@ -35,7 +37,7 @@ footer {
 
 main {
     flex-grow: 1;
-    margin: 5%;
+    margin: 3%;
 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -48,64 +50,18 @@ button {
     cursor: pointer;
 }
 
-.stageHeader {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
 
-    border-radius: 15px;
-    background-color: #41463D;
-}
-
-.addTaskButton, .removeTaskButton {
-    width: 6%;
-    
-    border-radius: 50%;
-    color: #fff;
-    text-align: center;
-    font-size: large;
-    font-weight: 600;
-    background-color: transparent;
-}
-
-.addTaskButton:hover, .removeTaskButton:hover {
-    background-color: rgba(255, 255, 255, 0.3);
-    cursor: pointer;
-}
 
 .stageTasksCount {
     align-content: center;
     width: 10%;
 }
 
-.stageTasks {
-    width: 100%;
-    
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 5%;
-}
-
-.stageTask {
-    min-height: 100%;
-
-    margin: 5% 0;
-    padding: 0 5%;
-
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-
-    border-radius: 15px;
-}
-
 .plannedTask {
     background-color: #914D76;
 }
 
-.inProgressTask {
+.in_progressTask {
     background-color: #0A014F;
 }
 

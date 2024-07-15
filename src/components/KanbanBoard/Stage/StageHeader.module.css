@@ -1,0 +1,9 @@
+.stageHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+    border-radius: 15px;
+    background-color: #41463D;
+}
