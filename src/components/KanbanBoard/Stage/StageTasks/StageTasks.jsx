@@ -1,4 +1,4 @@
-import StageButton from './StageButton/StageButton';
+import StageButton from '../StageButton/StageButton';
 import style from './StageTasks.module.css';
 
 export default function StageTasks({ label, tasks, handlerRemoveTask }) {
