@@ -1,38 +1,33 @@
 import { useState } from 'react';
-import StageHeader from './StageHeader/StageHeader.jsx';
-import StageTasks from './StageTasks/StageTasks.jsx';
+import StageHeader from './StageHeader/StageHeader';
+import StageTasks from './StageTasks/StageTasks';
 import style from './Stage.module.css';
 
-export default function Stage({ stageName, stageTasks }) {
-    const [tasks, setTasks] = useState(stageTasks);
+export default function Stage({ stage }) {
+    const [currentStage, setCurrentStage] = useState(stage);
 
     function handleAddTask() {
-        const newTask = prompt("Write new task", "Task #" + tasks.length);
+        const newTask = prompt("Write new task", "Task #" + currentStage.getTasks().length);
         if(newTask) {
-            setTasks((prevTasks) => [...prevTasks, newTask]);
+            setCurrentStage(currentStage.addTask(newTask));
         }
     }
 
     function handleRemoveTask(index) {
         const confirmDeletion = confirm("Are you sure to delete this task?");
         if(confirmDeletion) {
-            const updatedTasks = tasks.filter(
-                (_task, idx) => idx !== index
-            );
-            setTasks(updatedTasks);
+            setCurrentStage(currentStage.removeTask(index));
         }
     }
 
     return (
-        <div className={ style.stage + " " + stageName.split(' ').join('_').toLowerCase() }>
+        <div className={ style.stage + " " + currentStage.getName().split(' ').join('_').toLowerCase() }>
             <StageHeader
-                label={ stageName }
-                tasksCounter={ tasks.length }
+                stage={ currentStage }
                 handlerAddTask={ handleAddTask }
             />
             <StageTasks
-                label={ stageName }
-                tasks={ tasks }
+                stage={ currentStage }
                 handlerRemoveTask={ handleRemoveTask }
             />
         </div>

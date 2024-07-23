@@ -1,14 +1,14 @@
 import StageButton from '../StageButton/StageButton';
 import style from './StageTasks.module.css';
 
-export default function StageTasks({ label, tasks, handlerRemoveTask }) {
+export default function StageTasks({ stage, handlerRemoveTask }) {
     return (
-        <div id={ label + "Tasks" } className={style.stageTasks}> 
-            {tasks.map((task, index) => (
+        <div id={ stage.getName() + "Tasks" } className={style.stageTasks}> 
+            {stage.getTasks().map((task, index) => (
                 <div
                     key={index}
-                    id={label + "Task" + index}
-                    className={style.stageTask + " " + label.split(' ').join('_').toLowerCase() + "Task"}
+                    id={ stage.getName() + "Task" + index}
+                    className={style.stageTask + " " + stage.getName().split(' ').join('_').toLowerCase() + "Task"}
                 >
                     <p className="stageTaskName">{ task }</p>
                     <StageButton onClick={ () => handlerRemoveTask(index) }>x</StageButton>

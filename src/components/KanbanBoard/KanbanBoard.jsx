@@ -1,39 +1,41 @@
-import Stage from './Stage/Stage'
+import StageComponent from './Stage/Stage'
+import Stage from './Stage.js'
 
 export default function KanbanBoard() {
-    const plannedTasks = [
-        "Email team for updates",
-        "Send out meeting request",
-        "Prepare the presentation for the team",
-        "Book conference room",
-    ];
+    const plannedStage = new Stage(
+        "Planned",
+        [
+            "Email team for updates",
+            "Send out meeting request",
+            "Prepare the presentation for the team",
+            "Book conference room",
+        ]
+    );
 
-    const inProgressTasks = [
-        "Remove bugs from app",
-        "Add features to the project",
-    ];
+    const inProgressStage = new Stage(
+        "In progress",
+        [
+            "Remove bugs from app",
+            "Add features to the project",
+        ]
+    );
 
-    const doneTasks = [
+    const doneStage = new Stage(
+        "Done",
+        [
         "Add backlog to the project",
-    ];
+        ]
+    );
+
+    const allStages = [plannedStage, inProgressStage, doneStage];
 
     return (
         <main>
-            <Stage 
-                key="0"
-                stageName="Planned"
-                stageTasks={ plannedTasks }
-            />
-            <Stage 
-                key="1" 
-                stageName="In progress"
-                stageTasks={ inProgressTasks }
-            />
-            <Stage
-                key="2"
-                stageName="Done"
-                stageTasks={ doneTasks }
-            />
+            {
+                allStages.map(
+                    (stage, index) => <StageComponent key={ index } stage={ stage } />
+                )
+            }
         </main>
     );
 }

@@ -1,12 +1,12 @@
 import StageButton from '../StageButton/StageButton';
 import style from './StageHeader.module.css';
 
-export default function StageHeader({ label, tasksCounter, handlerAddTask }) {
+export default function StageHeader({ stage, handlerAddTask }) {
     return (
-        <div id={label + "Header"} className={ style.stageHeader }>
+        <div id={stage.getName() + "Header"} className={ style.stageHeader }>
             <StageButton onClick = { handlerAddTask }>+</StageButton>
-            <h3 className="StageName">{ label }</h3>
-            <span className="stageTasksCount">{ tasksCounter }</span>
+            <h3 className="StageName">{ stage.getName() }</h3>
+            <span className="stageTasksCount">{ stage.getTasks().length }</span>
         </div>
     );
 }
